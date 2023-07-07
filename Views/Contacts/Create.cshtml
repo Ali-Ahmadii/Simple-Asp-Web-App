@@ -1,0 +1,29 @@
+﻿@model Contacts
+<form method="post">
+    <div class="border-bottom p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create A Contact</h2>
+            <hr />
+        </div>
+        <div asp-validation-summary="All"></div>
+        <div class="mb-3">
+            <label asp-for="Name"></label>
+            <input asp-for="Name" class="form-control" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+                <div class="mb-3">
+            <label asp-for="Phone_Number">Phone Number</label>
+            <input asp-for="Phone_Number" class="form-control" />
+            <span asp-validation-for="Phone_Number" class="text-danger"></span>
+        </div>
+        <button type="submit" class = "btn btn-primary" style="width:150px">Create</button>
+        <a asp-controller="Contacts" asp-action="Index" class="btn btn-secondary" style="width:150px">
+            Back to List
+        </a>
+    </div>
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
